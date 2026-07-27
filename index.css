@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'DSEG7';
+    src: url('fonts/DSEG7Classic-Bold.woff2') format('woff2'),
+         url('fonts/DSEG7Classic-Bold.woff') format('woff'),
+         url('fonts/DSEG7Classic-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: white; 
+}
+
+.app {
+    width: 450px;
+    height:600px;
+    background: #1B244A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-around;
+  
+}
+
+.home-team,
+.guest-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.team-name {
+    width: 149px;
+    height: 36px;
+    font-family: Verdana;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #EEEEEE;
+}
+
+.score-display {
+    width: 155px;
+    height: 120px;
+    border-radius: 5px;
+    background: #080001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DSEG7', monospace;
+    font-size: 70px;
+    color: #F94F6D;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease, transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: space-around;
+    margin-top: 271px;
+    margin-left: 68px;
+}
+
+.btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    border: 2px solid #9AABD8;
+    background: transparent;
+    color: #9AABD8;
+    font-family: 'DSEG7', monospace;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+}
+.btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #C4CEEF;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+.reset-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.reset-btn {
+    align-self: center;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1.5px solid #4a5580;
+    background: transparent;
+    color: #9AABD8;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.reset-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.4s ease;
+}
+
+.reset-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #9AABD8;
+}
+
+.reset-btn:hover .reset-icon {
+    transform: rotate(-180deg);
+}
+
+.reset-btn:active {
+    transform: scale(0.9);
+}
+
+.score-display.leader {
+    box-shadow: 0 0 15px 3px rgba(249, 79, 109, 0.6);
+    border: 2px solid #F94F6D;
+    animation: pulse 0.5s ease;
+}
+
+.team-name.leader-name {
+    color: #F94F6D;
+}
+
+.team-name {
+    transition: color 0.4s ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*counter*/
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 575px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin: 0 auto 20px auto;
+}
+
+.game-info .label {
+    width: 100%;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+
+.label {
+    font-size: 12px;
+    color: #C4CEEF;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.fouls-box span:not(.label) {
+    font-size: 18px;
+    font-weight: 700;
+    color: #EEEEEE;
+}
+
+.period-controls,
+.timer-controls,
+.fouls-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#period {
+    font-family: 'DSEG7', monospace;
+    font-size: 20px;
+    font-weight: 400;
+    color: #F94F6D;
+    line-height: 1;
+}
+
+#timer {
+    font-family: 'DSEG7', monospace;
+    font-size: 32px;
+    color: #F94F6D;
+}
+
+.fouls-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.mini-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 1.5px solid #9AABD8;
+    background: transparent;
+    color: #EEEEEE;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.mini-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.period-controls {
+    align-items: center; /* aligne verticalement les boutons et le chiffre malgré leurs tailles différentes */
+}
+
+#period {
+    line-height: 1;
+    display: inline-block;
+}
+
+.period-box,
+.timer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
