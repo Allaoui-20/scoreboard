@@ -129,3 +129,17 @@ function resetTimer() {
     timeLeft = 600;
     timerEl.innerText = formatTime(timeLeft);
 }
+
+// Expose functions globally for inline onclick handlers (needed with type="module")
+window.addone = addone;
+window.adone = adone;
+window.addtwo = addtwo;
+window.adtwo = adtwo;
+window.addthree = addthree;
+window.adthree = adthree;
+window.resetScores = resetScores;
+window.changePeriod = changePeriod;
+window.addFoul = addFoul;
+window.startTimer = startTimer;
+window.pauseTimer = pauseTimer;
+window.resetTimer = resetTimer;
